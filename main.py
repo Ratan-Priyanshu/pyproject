@@ -6,6 +6,7 @@ from PIL import ImageTk, Image
 import os
 from pygame import mixer
 
+# djffk
 
 def click_sound():
     mixer.init()
