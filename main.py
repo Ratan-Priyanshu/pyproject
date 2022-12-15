@@ -166,11 +166,23 @@ class st:
         #     tx.configure(text="")
         st.inputtxt.delete('1.0', 'end')
         
-        
         # tx.configure(text='')
 
     start = Frame(w, width=800, height=600)
     label4 = Label(start, image=img)
+    def play_music():
+        mixer.init()
+        mixer.music.load("sound.mp3")
+        if button["text"] == "\U0001F507":
+            button["text"] = "\U0001F508"
+            button["bg"] = "green"
+            mixer.music.play()
+        else:
+            button["text"] = "\U0001F507"
+            button["bg"] = "orange"
+            mixer.music.pause()
+        button = Button(tx, text="\U0001F507",font=("Arial",15,"bold"), width=2, bg='green', fg='black', command=play_music)
+        button.place(relx=0.92,rely=0.05)
     label4.pack()
     # start.pack()
     start.place(anchor='center', relx=0.5, rely=0.5)
